@@ -1,3 +1,3 @@
-# vixml
+# Official code for ViXML paper at AAAI 2026.
 
 Code and material coming soon...
