@@ -130,6 +130,7 @@ if __name__ == '__main__':
     num_imgs_per_prod = 3
     datapath = '/rnd_ai_datasets4/dataFAIR/xmc/data/LF-AmazonTitles-131K/'
     # datapath = '/rnd_ai_datasets4/dataFAIR/xmc/data/LF-AmazonTitles-1.3M/'
+    # datapath = '/rnd_ai_datasets4/dataFAIR/xmc/data/MM-AmazonTitles-300K/'
 
     training_dataset = getIds(os.path.join(datapath, 'raw_data/train.raw.txt'))
     testing_dataset = getIds(os.path.join(datapath, 'raw_data/test.raw.txt'))
