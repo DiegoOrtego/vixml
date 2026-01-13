@@ -40,6 +40,7 @@ Download XXX.
 You may use one of the following options:
 
     - We provide SIGLIP2 embeddings for the datasets used in the paper, so after downloading place embedding information (<split_name>_embs_imgs_3_1152_siglip2.npy and <split_name>_imgs_384_3_map.npy) in the corresponding <datase_name> folder.
+    
     - We provide the image paths of LF-AmazonTitles datasets in the file img_urls.parquet. Run download_amazon_imgs.py (set internally the datapath to the corresponding <dataset_name>) to download the images (<split_name>_imgs_384_3.bin and <split_name>_imgs_384_3_map.npy). Then, run extract_img_embed.py to extract image embeddings with SIGLIP2, i.e. creating <split_name>_embs_imgs_3_1152_siglip2.npy. For MM-AmazonTitles-300K, you can get the urls from the official dataset and, then, create a img_urls.parquet file to proceed as in LF-AmazonTitles datasets.
 
 All resulting files mentioned above must be placed at <dataset_name> folder.
@@ -52,8 +53,7 @@ Second, we provide two scripts to run encoder and decoder alternatives in LF-Ama
 ```bash
 ./run_vixml_qwen25_3B_amzTitles131K.sh <gpu_id> LF-AmazonTitles-131K
 ```
-
-This run will train the model, storing the model at the end and evaluating during training the model performance at certain epochs.
+This run will train the model and store the embeddings for each of the splits and the model at the end. During training the model is evaluated at certain epochs.
 
 
 ## Cite as
