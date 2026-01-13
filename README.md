@@ -52,18 +52,18 @@ All resulting files mentioned above must be placed at <dataset_name> folder.
 
 #### Tokenization, training, inference and evaluation
 
-        - First, you need to tokenize the data using create_tokenized_files.py
-        
-        - Second, we provide two scripts to run encoder and decoder alternatives in LF-AmazonTitles-131K. See run_vixml_miniLML3_amzTitles131K.sh and run_vixml_qwen25_3B_amzTitles131K.sh.
-        
-        ```bash
-        ./run_vixml_qwen25_3B_amzTitles131K.sh <gpu_id> LF-AmazonTitles-131K
-        ```
-        This run will train the model and store the embeddings for each of the splits and the model at the end. During training the model is evaluated at certain epochs.
-        
-        - Third, to generate your own embeddings run encode_test_and_labels_mm.py.
-        
-        - Last, to evaluate your model run eval_mm.py.
+    - First, you need to tokenize the data using create_tokenized_files.py
+    
+    - Second, we provide two scripts to run encoder and decoder alternatives in LF-AmazonTitles-131K. See run_vixml_miniLML3_amzTitles131K.sh and run_vixml_qwen25_3B_amzTitles131K.sh.
+    
+    ```bash
+    ./run_vixml_qwen25_3B_amzTitles131K.sh <gpu_id> LF-AmazonTitles-131K
+    ```
+    This run will train the model and store the embeddings for each of the splits and the model at the end. During training the model is evaluated at certain epochs.
+    
+    - Third, to generate your own embeddings run encode_test_and_labels_mm.py.
+    
+    - Last, to evaluate your model run eval_mm.py.
 
 ## Cite as
 
