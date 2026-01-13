@@ -1,0 +1,70 @@
+# ./run_vixml_qwen25_3B_amzTitles131K.sh 0 LF-AmazonTitles-131K
+
+export PYTHONPATH=$(pwd)
+export TOKENIZERS_PARALLELISM=false
+export CUDA_VISIBLE_DEVICES=$1; python3 main.py \
+    -work-dir /rnd_ai_datasets4/dataFAIR/xmc/ \
+    -dataset "$2" \
+    --save-model \
+    --version ViXML_PRIME_qwen25I3B_e30_lr5e-5_bs2048 \
+    -e 30 \
+    -b 2048 \
+    -lr 5e-5 \
+    --seed 42 \
+    --num_warmup_steps 100 \
+    --tokenizer-type qwen25_3B \
+    --max-length 32 \
+    --encoder-name Qwen/Qwen2.5-3B-Instruct \
+    --transform-dim -1 \
+    --prime \
+    -lr_combiner 5e-4 \
+    --combiner_heads 8 \
+    --combiner_dim 1024 \
+    --ema_w_centroids 0.95 \
+    --n-clusters 65536 \
+    --init_fv_w_embeddings \
+    --n-hlp 0 \
+    --mi_reg_weight 0.1 \
+    --pos_freq_sampling \
+    --use_exact_centroids \
+    --use_exact_centroids_stale \
+    --cl-size 16 \
+    --curr-steps 8,12,16,20,24 \
+    --cl-start 4 \
+    --cl-update 2 \
+    --loss-type ohnm \
+    --margin_min 0.1 \
+    --margin_max 0.3 \
+    --agressive-loss \
+    --reduction custom \
+    --num-negatives 10 \
+    --no-fixed_pos \
+    --lora_ft \
+    --lora_rank 256 \
+    --lora_alpha 256 \
+    --lora_modules q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj \
+    --decoder_model \
+    --decoder_model_pooling mean \
+    --bfloat16 \
+    --use_liger_kernel \
+    --use_gradient_checkpointing \
+    --multimodal_xmc \
+    --multimodal_num_imgs 3 \
+    -multimodal_xmc_img_proj_lr 5e-4 \
+    --multimodal_trn_img_embs trn_embs_imgs_3_1152_siglip2.npy \
+    --multimodal_val_img_embs tst_embs_imgs_3_1152_siglip2.npy \
+    --multimodal_lbl_img_embs lbl_embs_imgs_3_1152_siglip2.npy \
+    --multimodal_trn_img_embs_map train_imgs_384_3_map.npy \
+    --multimodal_val_img_embs_map test_imgs_384_3_map.npy \
+    --multimodal_lbl_img_embs_map labels_imgs_384_3_map.npy \
+    --multimodal_concat_order text_image \
+    --img_prefix "and its image" \
+    --txt_prefix "This product text" \
+    --closing_suffix "<|endoftext|>" \
+    -A 0.6 \
+    -B 2.6 \
+    --filter-labels filter_labels_test.txt \
+    --eval-interval 5 \
+    --k 100 \
+    --ks 1,2,3,4,5
+    
