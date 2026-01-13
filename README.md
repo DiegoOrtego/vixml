@@ -1,4 +1,4 @@
-# Official code for ViXML paper @ AAAI 2026.
+# Official code for ViXML paper @ AAAI 2026
 
 Code for "_Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework_" published in AAAI 2026
 
@@ -46,11 +46,15 @@ All resulting files mentioned above must be placed at <dataset_name> folder.
 
 ### Run ViXML
 
-We provide two scripts to run encoder and decoder alternatives in LF-AmazonTitles-131K. See run_vixml_miniLML3_amzTitles131K.sh and run_vixml_qwen25_3B_amzTitles131K.sh.
+First, you need to tokenize the data using create_tokenized_files.py
+Second, we provide two scripts to run encoder and decoder alternatives in LF-AmazonTitles-131K. See run_vixml_miniLML3_amzTitles131K.sh and run_vixml_qwen25_3B_amzTitles131K.sh.
 
 ```bash
 ./run_vixml_qwen25_3B_amzTitles131K.sh <gpu_id> LF-AmazonTitles-131K
 ```
+
+This run will train the model, storing the model at the end and evaluating during training the model performance at certain epochs.
+
 
 ## Cite as
 
