@@ -1,6 +1,6 @@
 # Official code for ViXML paper @ AAAI 2026
 
-Code for "_Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework_" published in AAAI 2026
+Code for "_Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework_" published at AAAI 2026.
 
 ### Requirements
 
