@@ -4,7 +4,7 @@ Code for "_Large Language Models Meet Extreme Multi-label Classification: Scalin
 
 ### Requirements
 
-- Check requirements.txt file. We recommend to install pyxclib library following suggestions at [pyxclib](https://github.com/kunaldahiya/pyxclib).
+- Check requirements.txt file. We recommend to install pyxclib library following [pyxclib](https://github.com/kunaldahiya/pyxclib).
 
 ### Expected directory structure
 
@@ -39,7 +39,7 @@ Basically, you place all datasets with their corresponding <dataset_name> under 
 
 #### Images
 
-Download XXX.
+Download [data](https://huggingface.co/datasets/Diegooor/vixml_data/tree/main).
 You may use one of the following options:
 
     - We provide SIGLIP2 embeddings for the datasets used in the paper, so after downloading place embedding information (<split_name>_embs_imgs_3_1152_siglip2.npy and <split_name>_imgs_384_3_map.npy) in the corresponding <datase_name> folder.
